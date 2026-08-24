@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import NewsDetailsClient from './NewsDetailsClient'
 import { getNewsById } from '@/app/lib/actions/public/news/getNewsById'
 
+export const dynamic = 'force-dynamic'
+
 export default async function NewsDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const result = await getNewsById(id)

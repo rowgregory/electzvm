@@ -3,6 +3,8 @@ import NewsClient from './NewsClient'
 import { getPageBySlug } from '@/app/lib/actions/public/page/getPageBySlug'
 import { PageField } from '@/types/page.types'
 
+export const dynamic = 'force-dynamic'
+
 export default async function NewsPage() {
   const [result, news] = await Promise.all([
     getPageBySlug('news'),
