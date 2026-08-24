@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: 'Come meet Zosia VanMeter at upcoming campaign events across the 9th Essex District.'
 }
 
+export const dynamic = 'force-dynamic'
+
 export default async function EventsPage() {
   const [result, session] = await Promise.all([getPublishedEvents(), auth()])
   const events = result.success && result.data ? result.data : []
